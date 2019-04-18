@@ -5,6 +5,7 @@
  */
 package hw4_patrick_charlton;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -44,10 +45,10 @@ public class LCS {
 
                 } else if (c[i - 1][j] >= c[i][j - 1]) {
                     c[i][j] = c[i - 1][j];
-                    b[i][j] = '|';
+                    b[i][j] = '^';
                 } else {
                     c[i][j] = c[i][j - 1];
-                    b[i][j] = '-';
+                    b[i][j] = '<';
                 }
             }
         }
@@ -86,7 +87,7 @@ public class LCS {
 
     private static void print2D(int grid[][]) {
         for (int[] rowInt : grid) {
-            System.out.println(rowInt);
+            System.out.println(Arrays.toString(rowInt));
         }
     }
 
@@ -97,3 +98,4 @@ public class LCS {
     }
 
 }
+
